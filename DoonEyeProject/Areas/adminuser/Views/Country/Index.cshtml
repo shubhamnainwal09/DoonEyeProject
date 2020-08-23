@@ -1,0 +1,73 @@
+﻿
+
+
+
+
+<div class="container">
+    <h2>Country</h2>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add New Country</button><br /><br />
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+
+                <th>
+                    Country Name
+                </th>
+                <th>
+                    Country Initial
+                </th>
+
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+        </tbody>
+    </table>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title" id="myModalLabel">Country</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" id="CountryCode" placeholder="CountryCode" style="display:none;" />
+                    </div>
+                    <div class="form-group">
+                        <label for="CountryName">CountryName</label>
+                        <input type="text" class="form-control" id="CountryName" placeholder="CountryName" />
+                    </div>
+                    <div class="form-group">
+                        <label for="CountryInitial">CountryInitial</label>
+                        <input type="text" class="form-control" id="CountryInitial" placeholder="CountryInitial" />
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">ADD</button>
+
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<a href="@Url.Action("Index", "State")">View State Page</a>
+
+
+
+@section scripts{
+    <script src="~/Scripts/country.js"></script>
+    }
