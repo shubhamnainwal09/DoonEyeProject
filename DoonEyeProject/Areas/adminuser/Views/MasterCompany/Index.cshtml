@@ -1,0 +1,120 @@
+﻿
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <h2>Country</h2>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add New Company</button><br /><br />
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+
+                <th>
+                    Company Name
+                </th>
+                <th>
+                    City
+                </th>
+
+               
+                
+               
+            </tr>
+        </thead>
+        <tbody class="tbody">
+        </tbody>
+    </table>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title" id="myModalLabel">Company</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    @*<div class="form-group">
+                        <label for="CompanyID">CompanyID</label>
+                        <input type="text" class="form-control" id="CompanyID" placeholder="CompanyID" />
+                    </div>*@
+
+                    <div class="form-group">
+                        <label for="CompanyName">CompanyName</label>
+                        <input type="text" class="form-control" id="CompanyName" placeholder="CompanyName" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Address1">Address1</label>
+                        <input type="text" class="form-control" id="Address1" placeholder="Address1" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Address2">Address2</label>
+                        <input type="text" class="form-control" id="Address2" placeholder="Address2" />
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="CityCode">CityCode</label>
+                        <input type="text" class="form-control" id="CityCode" placeholder="CityCode" />
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="LocalArea">LocalArea</label>
+                        <input type="text" class="form-control" id="LocalArea" placeholder="LocalArea" />
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="Tagline">Tagline</label>
+                        <input type="text" class="form-control" id="Tagline" placeholder="Tagline" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Username">Username</label>
+                        <input type="text" class="form-control" id="Username" placeholder="Username" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Password">Password</label>
+                        <input type="text" class="form-control" id="Password" placeholder="Password" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="LogoUrl">LogoUrl</label>
+                        <input type="text" class="form-control" id="LogoUrl" placeholder="LogoUrl" />
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="CompanyEmail">CompanyEmail</label>
+                        <input type="text" class="form-control" id="CompanyEmail" placeholder="CompanyEmail" />
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">ADD</button>
+
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section scripts{
+    <script src="~/Scripts/company.js"></script>
+}

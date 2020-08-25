@@ -124,11 +124,19 @@
     <Compile Include="Areas\adminuser\Controllers\CityAreaController.cs" />
     <Compile Include="Areas\adminuser\Controllers\CityController.cs" />
     <Compile Include="Areas\adminuser\Controllers\CountryController.cs" />
+    <Compile Include="Areas\adminuser\Controllers\MainCategoryController.cs" />
+    <Compile Include="Areas\adminuser\Controllers\MasterCompanyController.cs" />
     <Compile Include="Areas\adminuser\Controllers\StateController.cs" />
+    <Compile Include="Areas\adminuser\Controllers\SubCategoryController.cs" />
+    <Compile Include="Areas\adminuser\Controllers\SuperCategoryController.cs" />
     <Compile Include="Areas\adminuser\Models\CountryStateCity.cs" />
     <Compile Include="Areas\adminuser\Models\Master_City.cs" />
     <Compile Include="Areas\adminuser\Models\Master_CityArea.cs" />
+    <Compile Include="Areas\adminuser\Models\Master_Company.cs" />
     <Compile Include="Areas\adminuser\Models\Master_Country.cs" />
+    <Compile Include="Areas\adminuser\Models\Master_MainCategory.cs" />
+    <Compile Include="Areas\adminuser\Models\Master_SubCategory.cs" />
+    <Compile Include="Areas\adminuser\Models\Master_SuperCategory.cs" />
     <Compile Include="Areas\adminuser\Models\Mater_State.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -155,9 +163,14 @@
     <Content Include="Areas\adminuser\Views\State\Index.cshtml" />
     <Content Include="Areas\adminuser\Views\City\Index.cshtml" />
     <Content Include="Areas\adminuser\Views\CityArea\Index.cshtml" />
+    <Content Include="Areas\adminuser\Views\SuperCategory\Index.cshtml" />
+    <Content Include="Areas\adminuser\Views\MainCategory\Index.cshtml" />
+    <Content Include="Areas\adminuser\Views\SubCategory\Index.cshtml" />
+    <Content Include="Areas\adminuser\Views\MasterCompany\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\city.js" />
     <Content Include="Scripts\cityarea.js" />
+    <Content Include="Scripts\company.js" />
     <Content Include="Scripts\country.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -168,8 +181,11 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\maincategory.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\state.js" />
+    <Content Include="Scripts\subcategory.js" />
+    <Content Include="Scripts\supercategory.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -188,6 +204,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\adminuser\Data\" />
+    <Folder Include="SuperImages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

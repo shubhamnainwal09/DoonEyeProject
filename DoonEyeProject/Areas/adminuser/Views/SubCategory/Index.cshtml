@@ -1,0 +1,92 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <h2>Sub Category</h2>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add New SubCategory</button><br /><br />
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+               
+                <th>
+                  Sub Name
+                </th>
+
+                <th>
+                    Sub Des
+                </th>
+               
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+        </tbody>
+    </table>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dissmiss="modal"><span aria-hidden="true">×</span></button>*@
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title" id="myModalLabel">Sub CAtegory</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    <div class="form-group">
+
+                        @Html.DropDownList("SuperList", new SelectList(ViewBag.SuperList, "SuperCategoryID", "SuperCategoryName"), "Please select", new { @id = "SuperCategoryID" })
+
+                    </div>
+
+                  
+                    <select id="MainCategoryID">
+                        <option value="">Please Select</option>
+                    </select>
+
+                    @*<div class="form-group">
+                        <label for="SubCategoryID">SubCategoryID</label>
+                        <input type="text" class="form-control" id="SubCategoryID" placeholder="SubCategoryID" />
+                    </div>*@
+                    <div class="form-group">
+                        <label for="SubCategoryName">SubCategoryName</label>
+                        <input type="text" class="form-control" id="SubCategoryName" placeholder="SubCategoryName" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="SubCategoryDes">SubCategoryDes</label>
+                        <input type="text" class="form-control" id="SubCategoryDes" placeholder="SubCategoryDes" />
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Addsub();">Add</button>
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section scripts{
+    <script src="~/Scripts/subcategory.js"></script>
+}

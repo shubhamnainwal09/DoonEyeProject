@@ -100,6 +100,15 @@ namespace DoonEyeProject.Areas.adminuser.Controllers
 
         }
 
+        //get cityarea
+
+        public JsonResult GetbyID(int AreaCode)
+        {
+            var citiesarea = db.ListCityArea().Find(x => x.AreaCode.Equals(AreaCode));
+            return Json(citiesarea, JsonRequestBehavior.AllowGet);
+        }
+
+
 
         //cityAreaList
         [HttpGet]
@@ -117,19 +126,34 @@ namespace DoonEyeProject.Areas.adminuser.Controllers
             return Json(db.AddCityArea(ca), JsonRequestBehavior.AllowGet);
         }
 
+
+        //EDIT CITY AREA
+
+        [HttpPost]
+        public JsonResult Updatecityarea(Master_CityArea c)
+        {
+            return Json(db.Updatecityarea(c), JsonRequestBehavior.AllowGet);
+        }
+
+        //delete cityarea
+        [HttpPost]
+        public JsonResult deletecityarea(int AreaCode)
+        {
+            return Json(db.Deletecityarea(AreaCode), JsonRequestBehavior.AllowGet);
+        }
         //Check Area Code
         //[HttpPost]
         //public JsonResult CheckUsername(int AreaCode)
         //{
         //    int r = 0;
         //    bool isValid = true;
-           
-               
+
+
         //        using (SqlConnection con = new SqlConnection(cs))
         //        {
         //            con.Open();
         //            string q = "select count(*) from Master_CityArea where AreaCode=@AreaCode";
-                     
+
         //            SqlCommand com = new SqlCommand(q, con);
         //            com.Parameters.AddWithValue("@AreaCode", AreaCode);
         //            r = (int)com.ExecuteScalar();
@@ -137,8 +161,8 @@ namespace DoonEyeProject.Areas.adminuser.Controllers
         //        {
         //            isValid = false;
         //        }
-                    
-                 
+
+
         //    }
 
         //    return Json(isValid, JsonRequestBehavior.AllowGet);

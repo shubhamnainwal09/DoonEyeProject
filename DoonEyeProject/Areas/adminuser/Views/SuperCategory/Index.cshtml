@@ -1,0 +1,91 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <h2>SuperCategory</h2>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add New SuperCategory</button><br /><br />
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+
+
+                <th>
+                    SuperCategoryName
+                </th>
+
+                <th>
+                    SuperCategoryDescription
+                </th>
+
+                <th>
+                    SuperCategoryIcon
+                </th>
+
+
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+        </tbody>
+    </table>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dissmiss="modal"><span aria-hidden="true">×</span></button>*@
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title" id="myModalLabel">SuperCategory</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    @*<div class="form-group">
+
+            <input type="text" class="form-control" id="SuperCategoryID" placeholder="SuperCategoryID" />
+        </div>*@
+
+
+                    <div class="form-group">
+                        <label for="SuperCategoryName">SuperCategoryName</label>
+                        <input type="text" class="form-control" id="SuperCategoryName" placeholder="SuperCategoryName" />
+                    </div>
+                    <div class="form-group">
+                        <label for="SuperCategoryDescription">SuperCategoryDescription</label>
+                        <input type="text" class="form-control" id="SuperCategoryDescription" placeholder="SuperCategoryDescription" />
+                    </div>
+                    <div class="form-group">
+                        <label for="SuperCategoryIcon">Select File</label>
+                        <input type="file" class="form-control" id="SuperCategoryIcon" placeholder="SuperCategoryIcon" />
+                    </div>
+
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="return AddnewSuper();">Add</button>
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section scripts{
+    <script src="~/Scripts/supercategory.js"></script>
+}

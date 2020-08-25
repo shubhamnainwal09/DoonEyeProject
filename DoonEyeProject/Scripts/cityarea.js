@@ -65,29 +65,34 @@ function loadDataAreaCity() {
 
 
 
-//Function for getting the Data Based upon City Code
-function getbyID(CityCode) {
-
-    $('#CityCode').css('border-color', 'lightgrey');
-    $('#CityName').css('border-color', 'lightgrey');
+//Function for getting the Data Based upon Area Code
+function getbyID(AreaCode) {
+   
+    $('#AreaCode').css('border-color', 'lightgrey');
+    $('#AreaName').css('border-color', 'lightgrey');
 
     $.ajax({
-        url: "/adminuser/City/GetbyID/" + CityCode,
+        url: "/adminuser/CityArea/GetbyID/" + AreaCode,
         typr: "GET",
-        data: { 'CityCode': CityCode },
+        data: { 'AreaCode': AreaCode },
         contentType: "application/json;charset=UTF-8",
         dataType: "json",
         success: function (result) {
-            $('#CityCode').val(result.CityCode);
-            $('#CityName').val(result.CityName);
+            $('#AreaCode').val(result.AreaCode);
+            $('#AreaName').val(result.AreaName);
 
 
             $('#myModal').modal('show');
             $('#btnUpdate').show();
             $('#btnAdd').hide();
-            $('#CityCode').attr('readonly', 'true');
+            $('#AreaCode').attr('readonly', 'true');
             $('#CountryCode').hide();
+            $('#CountryName').hide();
             $('#StateCode').hide();
+            $('#StateName').hide();
+            $('#CityName').hide();
+            $('#CityCode').hide();
+            
         },
         error: function (errormessage) {
             alert(errormessage.responseText);
@@ -174,7 +179,7 @@ function validatecityarea() {
     return isValid;
 }
 
-//Valdidation updateCity jquery
+//Valdidation updateCityArea jquery
 function validatecityareaupdate() {
     var isValid = true;
     var numbers = /^[0-9]+$/;
@@ -193,30 +198,30 @@ function validatecityareaupdate() {
 
 
 
-//function for updating State's record
+//function for updating CityArea record
 function Update() {
 
-    var res = validatecityupdate();
+    var res = validatecityareaupdate();
     if (res === false) {
         return false;
     }
     var c = {
-        CityCode: $('#CityCode').val(),
-        CityName: $('#CityName').val()
+        AreaCode: $('#AreaCode').val(),
+        AreaName: $('#AreaName').val()
     };
     $.ajax({
 
-        url: '/adminuser/City/Updatecity',
+        url: '/adminuser/CityArea/Updatecityarea',
         data: JSON.stringify(c),
         type: "POST",
         contentType: "application/json;charset=utf-8",
         dataType: "json",
         success: function (result) {
-            loadDataCity();
+            loadDataAreaCity();
             $('#myModal').modal('hide');
 
-            $('#CityCode').val("");
-            $('#CityName').val("");
+            $('#AreaCode').val("");
+            $('#AreaName').val("");
             location.reload(true);
 
         },
@@ -225,19 +230,19 @@ function Update() {
         }
     });
 }
-//function for deleting State record
-function Delele(CityCode) {
+//function for deleting CityArea record
+function Delele(AreaCode) {
     var ans = confirm("Are you sure you want to delete this Record?");
     if (ans) {
         $.ajax({
-            url: '/adminuser/City/deletecity/' + CityCode,
-            data: JSON.stringify({ "CityCode": CityCode }),
+            url: '/adminuser/CityArea/deletecityarea/' + AreaCode,
+            data: JSON.stringify({ "AreaCode": AreaCode }),
             type: "POST",
             contentType: "application/json;charset=UTF-8",
             processData: false,
             dataType: "json",
             success: function (result) {
-                loadDataCity();
+                loadDataAreaCity();
             },
             error: function (errormessage) {
                 alert(errormessage.responseText);
